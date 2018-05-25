@@ -1,0 +1,7 @@
+# Pythonic files
+*.pyc
+# Vim files
+*.swap
+tags
+
+tmp

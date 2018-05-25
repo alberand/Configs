@@ -1,0 +1,10 @@
+[user]
+	email = albershteyn.andrey@gmail.com
+	name = alberand
+[core]
+	excludesfile = /home/andrew/.global_ignore
+	editor = vim
+[creo]
+	autocrlf = true
+[color]
+	ui = auto
