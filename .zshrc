@@ -207,6 +207,8 @@ alias eduroam='sudo silence $HOME/.scripts/eduroam.sh'
 
 # Go to directory
 source ~/.shortcuts
+# Commands
+source ~/.commands
 
 # For fun
 alias rickroll="curl -L http://bit.ly/10hA8iC | bash"
