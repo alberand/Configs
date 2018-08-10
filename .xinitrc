@@ -4,10 +4,11 @@
 sleep 1
 
 # Old code for managing multiple monitors; replaced with mons
-# if [ $(xrandr -q | grep VGA | cut -d' ' -f2) == "connected" ]; then
+if [ $(xrandr -q | grep VGA | cut -d' ' -f2) == "connected" ]; then
+    mons -s
     # xrandr --output VGA-1 --auto --above eDP-1
     # xrandr --output eDP-1 --off --output VGA-1 --auto
-# fi
+fi
 
 # mons script from AUR
 nohup mons -a > /dev/null 2>&1 &
