@@ -1,6 +1,11 @@
 #!/bin/bash
 
-alias sem='cd /home/andrew/Documents/CVUT/Semester_3/Project'
-alias c='cd /home/andrew/Development/Programming/C++'
-alias gtm="cd /home/andrew/Projects/GTM/gtm3-tests/integration"
-alias eng='cd /home/andrew/Documents/English/'
+# Frequent directories
+alias sem='cd $HOME/Documents/CVUT/State/'
+alias eng='cd $HOME/Documents/English/'
+alias deu='cd $HOME/Documents/Deutsch/'
+
+# Pythons
+alias py2='python2'
+alias py3='python3'
+alias py='python'
