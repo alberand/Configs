@@ -21,6 +21,9 @@ set encoding=utf-8
 " Byte order mark
 set nobomb
 
+" Highlight search item
+set hlsearch
+
 " Use utf-8 for writing
 set fileencoding=utf-8
 set termencoding=utf-8
@@ -36,10 +39,10 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Navigation in insert mode
-imap <C-j> <Down>
-imap <C-k> <Up>
-imap <C-h> <Left>
-imap <C-l> <Right>
+" imap <C-j> <Down>
+" imap <C-k> <Up>
+" imap <C-h> <Left>
+" imap <C-l> <Right>
 
 " Set Splits more natural (vsplit open new window to the right...)
 set splitbelow
