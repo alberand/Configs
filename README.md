@@ -11,5 +11,5 @@ Install
 ```
 git clone https://github.com/alberand/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-for file in $(ls -a); do echo ln -s ~/.dotfiles/$file ~/$file; done
+for file in $(find . -maxdepth 1 -type f -name ".*" -printf '%f\n'); do echo ln -s ~/.dotfiles/$file ~/$file; done
 ```
