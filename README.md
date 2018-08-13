@@ -10,6 +10,6 @@ For example:
 Install
 ```
 git clone https://github.com/alberand/dotfiles.git ~/.dotfiles
-cd .dotfiles
-for file in $(ls); do echo ln -s ~/.dotfiles/$file ~/$file; done
+cd ~/.dotfiles
+for file in $(ls -a); do echo ln -s ~/.dotfiles/$file ~/$file; done
 ```
