@@ -1,5 +1,5 @@
-# Path to your oh-my-zsh installation.  export ZSH=/home/andrew/.oh-my-zsh
-export ZSH=/home/andrew/.oh-my-zsh
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -212,7 +212,7 @@ source ~/.commands
 
 # For fun
 alias rickroll="curl -L http://bit.ly/10hA8iC | bash"
-alias weather="/home/andrew/.scripts/weather.sh"
+alias weather="$HOME/.scripts/weather.sh"
 
 # For unmount most recent removable drives use devmon -c
 # To umount all removable devices type devmon -r
@@ -224,8 +224,7 @@ alias weather="/home/andrew/.scripts/weather.sh"
 # Minicom colors
 export MINICOM="-m -c on"
 
-export PATH=$PATH:/home/andrew/.local/bin
-export PATH=$PATH:/opt/cuda/bin
+export PATH=$PATH:$HOME/.local/bin
 
 #==============================================================================
 # Useful commands
@@ -237,4 +236,5 @@ export PATH=$PATH:/opt/cuda/bin
 #==============================================================================
 export PLATFORMIO_FORCE_COLOR=true
 
-# export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+# export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true \
+#   -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
