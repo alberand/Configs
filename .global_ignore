@@ -2,6 +2,7 @@
 *.pyc
 # Vim files
 *.swap
+*.swp
 tags
 
 tmp
