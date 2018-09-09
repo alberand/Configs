@@ -28,6 +28,7 @@ set $transparent #00000000
 
 set $height 14
 
+
 #==============================================================================
 # Main settings
 #==============================================================================
@@ -66,7 +67,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # Start dmenu (a program launcher)
-bindsym $mod+p exec dmenu_run -fn "Monoscape-10" -h 20 -sb "$d_blue" -sf "$orange" -nb "$d_blue" -nf "$white"
+bindsym $mod+p exec dmenu_run -fn "Monoscape-10" -sb "$d_blue" -sf "$orange" -nb "$d_blue" -nf "$white"
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload

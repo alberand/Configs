@@ -1,0 +1,30 @@
+[global_config]
+  borderless = True
+  title_font = Hack 9
+  title_hide_sizetext = True
+  window_state = maximise
+[keybindings]
+  help = Page_Down
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    font = Monospace 10
+    scrollback_lines = 1000
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+  [[Good Font]]
+    cursor_color = "#aaaaaa"
+    font = Sans 10
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
