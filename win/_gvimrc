@@ -1,0 +1,8 @@
+" Remove the manu bar
+set guioptions-=m
+
+" Remove the tool bar
+set guioptions-=T
+
+" Remove the right-hand scroll bar
+set guioptions-=r
