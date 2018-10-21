@@ -2,9 +2,15 @@
 	email = albershteyn.andrey@gmail.com
 	name = alberand
 [core]
-	excludesfile = /home/andrew/.global_ignore
+	excludesfile = /home/andrew/.gitignore
 	editor = vim
 [creo]
 	autocrlf = true
 [color]
 	ui = auto
+[alias]
+  co = checkout
+  cm = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
