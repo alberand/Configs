@@ -150,7 +150,8 @@ function pack() {
     # If all entities are valid pack it.
     echo "Packed files:"
     if [ $bad -eq 0 ] ; then
-        tar -cvzf result.tar "$@"
+        name=$(echo "$1" | cut -d'.' -f1)
+        tar -cvzf "$name".tar "$@"
     fi
 }
 
