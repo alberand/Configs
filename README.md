@@ -1,6 +1,6 @@
 ### Repository with .dotfiles for my Arch Linux machine
 
-The principle is based on soft links:
+This is based on soft links:
 ```
 ~/.vimrc -> ~/.dotfiles/.vimrc
 ```
@@ -12,3 +12,18 @@ cd ~/.dotfiles
 for file in $(find . -maxdepth 1 -type f -name ".*" -printf '%f\n'); do echo ln -s ~/.dotfiles/$file ~/$file; done
 for obj in $(ls .config); do mv ~/.config/$obj /tmp/$obj; ln -s ~/.dotfiles/.config/$obj ~/.config/$obj; done
 ```
+
+#### Required
+
+* i3-gaps
+* dmenu
+* i3blocks
+* vim
+* zsh
+* git
+* firefox
+
+#### Optional
+
+* Zathura
+* oh-my-zsh
