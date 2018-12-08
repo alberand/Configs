@@ -1,16 +1,16 @@
 [user]
-	email = albershteyn.andrey@gmail.com
-	name = alberand
+    email = albershteyn.andrey@gmail.com
+    name = alberand
 [core]
-	excludesfile = /home/andrew/.gitignore
-	editor = vim
+    excludesfile = $HOME/.gitignore
+    editor = vim
 [creo]
-	autocrlf = true
+    autocrlf = true
 [color]
-	ui = auto
+    ui = auto
 [alias]
-  co = checkout
-  cm = commit
-  st = status
-  br = branch
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    co = checkout
+    cm = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
