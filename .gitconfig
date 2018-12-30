@@ -2,7 +2,7 @@
     email = albershteyn.andrey@gmail.com
     name = alberand
 [core]
-    excludesfile = $HOME/.gitignore
+    excludesfile = ~/.gitignore
     editor = vim
 [creo]
     autocrlf = true
