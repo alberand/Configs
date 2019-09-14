@@ -17,7 +17,7 @@
 [profiles]
   [[default]]
     cursor_color = "#aaaaaa"
-    font = Monospace 10
+    font = Droid Sans Mono 10
     scrollback_lines = 1000
     scrollbar_position = hidden
     show_titlebar = False
