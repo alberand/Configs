@@ -1,17 +1,7 @@
 #!/bin/bash
 
-# If some monitor is connected to VGA port put it above laptop's screen
-sleep 1
-
-# Old code for managing multiple monitors; replaced with mons
-if [ $(xrandr -q | grep VGA | cut -d' ' -f2) == "connected" ]; then
-    mons -s
-    # xrandr --output VGA-1 --auto --above eDP-1
-    # xrandr --output eDP-1 --off --output VGA-1 --auto
-fi
-
-# mons script from AUR
-nohup mons -a > /dev/null 2>&1 &
+# Automatic monitor switching on plug/unplug
+nohup mons -a -x "/home/alberand/.dotfiles/monitor-update.sh" > /dev/null 2>&1 &
 
 # Disable touchpad while typing. Disables keyboard for 0.15s after keypress
 syndaemon -i 0.15 -t -K -R -d
