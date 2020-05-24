@@ -41,7 +41,7 @@ alias eduroam='sudo silence $HOME/.scripts/eduroam.sh'
 alias rickroll="curl -L http://bit.ly/10hA8iC | bash"
 alias weather="$HOME/.scripts/weather.sh"
 
-BLOG_ROOT=$HOME/Projects/Blog
+BLOG_ROOT=$HOME/Projects/blog
 
 # Allows to passthrough user's aliases to sudo
 alias sudo='sudo '
