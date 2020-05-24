@@ -1,0 +1,83 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "none",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.25,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 1 children
+            "border": "none",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 404,
+                       "width": 642,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "andrew@andrew-laptop: ~/Documents/CVUT/Semester 2/DIT/Semestral Project",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       "class": "^Terminator$",
+                       "instance": "^terminator$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 404,
+               "width": 642,
+               "x": 0,
+               "y": 0
+            },
+            "name": "andrew@andrew-laptop: ~/TMP/Keylogger/linux",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Terminator$",
+               "instance": "^terminator$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 366,
+       "width": 1016,
+       "x": 345,
+       "y": 1477
+    },
+    "name": "Telegram",
+    "percent": 0.75,
+    "swallows": [
+       {
+       "class": "^TelegramDesktop$",
+       "instance": "^Telegram$"
+       }
+    ],
+    "type": "con"
+}
+
