@@ -16,7 +16,7 @@ setxkbmap -option ctrl:nocaps
 xset r rate 400 30 &
 
 # Run automount tool
-devmon --exec-on-drive "i3-msg \"workspace 9; exec /usr/bin/terminator --working-directory='%d' \"" &
+devmon --exec-on-drive "i3-msg \"workspace 9; exec notify-send 'USB drive connected' 'The device is at %d'; exec /usr/bin/kitty -d='%d' \"" &
 
 # Run compositor
 compton -b --config ~/.config/compton.conf &
