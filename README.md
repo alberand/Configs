@@ -13,6 +13,10 @@ for file in $(find . -maxdepth 1 -type f -name ".*" -printf '%f\n'); do echo ln 
 for obj in $(ls .config); do mv ~/.config/$obj /tmp/$obj; ln -s ~/.dotfiles/.config/$obj ~/.config/$obj; done
 ```
 
+```
+sudo ln -s 00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf
+```
+
 #### Required
 
 * i3-gaps
