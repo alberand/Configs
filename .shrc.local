@@ -14,8 +14,8 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
 # Some settings for tmux.
-alias tmux="TERM=screen-256color-bce tmux"
-export TERM=screen-256color-bce
+alias tmux="TERM=screen-256color tmux"
+export TERM=screen-256color
 
 # Editor for pacman
 export VISUAL="vim"
