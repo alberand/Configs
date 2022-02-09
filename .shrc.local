@@ -19,12 +19,16 @@ export TERM=screen-256color-bce
 
 # Editor for pacman
 export VISUAL="vim"
+export EDITOR="vim"
 
 # Minicom colors
 export MINICOM="-m -c on"
 
 # Add local scripts
 export PATH=$PATH:$HOME/.local/bin
+
+# Editor for cscope (by default it's vi)
+export CSCOPE_EDITOR=vim 
 
 # Just usefull aliases
 # Applications
