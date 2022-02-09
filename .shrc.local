@@ -67,14 +67,9 @@ alias p='pacman'
 alias y='yaourt'
 alias v='vim'
 
-# Run ssh-agent
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > /tmp/.ssh-agent-thing
-fi
+# Connect to ssh-agent run by systemd
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(</tmp/.ssh-agent-thing)"
-fi
 #==============================================================================
 # Commands
 #==============================================================================
