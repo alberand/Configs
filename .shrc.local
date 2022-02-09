@@ -30,6 +30,14 @@ export PATH=$PATH:$HOME/.local/bin
 # Editor for cscope (by default it's vi)
 export CSCOPE_EDITOR=vim 
 
+# Wrapper for mutt to use encrypted password
+with_passwords(){
+    pwds=`gpg --decrypt ~/.passwords.gpg`
+    eval "$pwds"
+}
+alias mutt="with_passwords; mutt"
+alias mbsync="with_passwords; mbsync"
+
 # Just usefull aliases
 # Applications
 alias viml="/usr/bin/vim --servername vimlatex"

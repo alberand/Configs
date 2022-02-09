@@ -1,0 +1,41 @@
+# vi ~/.muttrc
+# About Me
+set realname = "Andrey Albershteyn"
+set from = "aalbersh@redhat.com"
+set signature="~/.mutt/signature"
+alternates "(andrey.albershteyn@redhat\.com)"
+
+set editor = "/usr/bin/vim -c 'set spell spelllang=en'"
+
+# My credentials
+set smtp_url = "smtps://aalbersh@redhat.com@smtp.gmail.com/"
+set smtp_pass = $MUTT_PASS
+set imap_user = "aalbersh@redhat.com"
+set imap_pass = $MUTT_PASS
+
+# Sidebar
+set sidebar_visible
+set sidebar_short_path = yes
+set sidebar_format = "%B%> %S%?N?[%N]?"
+set sidebar_width = 20
+set mail_check_stats
+set pipe_decode
+
+# My mailboxes
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+
+# Where to put the stuff
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+
+# Etc
+set mail_check = 30
+set move = no
+set imap_keepalive = 900
+set sort = threads
+set editor = "vim"
+
+# GnuPG bootstrap
+# source ~/.mutt/gpg.rc
