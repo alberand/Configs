@@ -1,16 +1,12 @@
 # vi ~/.muttrc
 # About Me
-set realname = "Andrey Albershteyn"
-set from = "aalbersh@redhat.com"
+source ~/.muttrc.local
 set signature="~/.mutt/signature"
-alternates "(andrey.albershteyn@redhat\.com)"
 
 set editor = "/usr/bin/vim -c 'set spell spelllang=en'"
 
 # My credentials
-set smtp_url = "smtps://aalbersh@redhat.com@smtp.gmail.com/"
 set smtp_pass = $MUTT_PASS
-set imap_user = "aalbersh@redhat.com"
 set imap_pass = $MUTT_PASS
 
 # Sidebar

@@ -1,0 +1,8 @@
+# About me
+set realname = "Andrey Albershteyn"
+set from = "andrey.albershteyn@gmail.com"
+alternates "(andrey.albershteyn@gmail\.com)"
+
+# Credentials
+set smtp_url = "smtps://andrey.albershteyn@gmail.com@smtp.gmail.com/"
+set imap_user = "andrey.albershteyn@gmail.com"
