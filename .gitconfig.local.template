@@ -1,0 +1,8 @@
+[user]
+    email = andrey.albershteyn@gmail.com
+    name = Andrey Albershteyn
+[sendemail]
+    smtpuser = andrey.albershteyn@gmail.com
+    smtpserver = smtp.gmail.com
+    smtpencryption = tls
+    smtpserverport = 587

@@ -1,10 +1,9 @@
-[user]
-    email = albershteyn.andrey@gmail.com
-    name = alberand
+[include]
+    path =  ~/.gitconfig.local
 [core]
     excludesfile = ~/.gitignore
     editor = vim
-    pager = cat
+    pager = less -r
 [creo]
     autocrlf = true
 [color]
