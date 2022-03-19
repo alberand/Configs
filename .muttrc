@@ -16,6 +16,10 @@ set sidebar_format = "%B%> %S%?N?[%N]?"
 set sidebar_width = 20
 set mail_check_stats
 set pipe_decode
+#Sidebar navigation
+bind index,pager "\Cp" "sidebar-prev"
+bind index,pager "\Cn" "sidebar-next"
+bind index,pager "\Co" "sidebar-open"
 
 # My mailboxes
 set folder = "imaps://imap.gmail.com:993"
