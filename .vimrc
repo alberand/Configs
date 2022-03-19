@@ -84,10 +84,18 @@ set undodir=~/.vim/undodir
 "==============================================================================
 " Set word wrapping
 set tw=80
+set textwidth=80
+
+" Set the textwidth to 68 characters for guilt commit messages
+au BufEnter,BufNewFile,BufRead guilt.msg.*,.gitsendemail.*,git.*,*/.git/* set tw=68
 
 " Set color column at 80 symbol
-set colorcolumn=80
+set cc=+1
 highlight ColorColumn ctermbg=150
+
+" highlight whitespace damage
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$\| \+\ze\t/
 
 " Set up color scheme and syntax highlighting
 set t_Co=256
