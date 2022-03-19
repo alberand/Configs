@@ -29,6 +29,10 @@ set spoolfile = "+INBOX"
 set header_cache = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/bodies"
 set certificate_file = "~/.mutt/certificates"
+set postponed = "+Drafts"
+# Gmail automatically saves sent e-mail to +[Gmail]/Sent
+unset record
+mailboxes =INBOX =Memos =fstests =outage
 
 # Etc
 set mail_check = 30
