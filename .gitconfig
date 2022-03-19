@@ -13,6 +13,7 @@
     cm = commit
     st = status
     br = branch
+    fp = format-patch -o patches
     lg = log --oneline -n10
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [filter "lfs"]
