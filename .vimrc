@@ -104,7 +104,9 @@ set synmaxcol=128
 
 " Speed up terminal
 set ttyfast 
-set ttyscroll=3
+if !has('nvim')
+    set ttyscroll=3
+endif
 set lazyredraw 
 
 "==============================================================================
