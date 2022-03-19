@@ -8,7 +8,7 @@
 " @author: Andrey Albershteyn
 "
 " Load local machine's settings
-if filereadable(glob("~/.vimrc.local")) 
+if filereadable(glob("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
 
@@ -31,7 +31,7 @@ set termencoding=utf-8
 " Use .vimrc if it is appear in current folder. !!!DANGER!!!
 set exrc
 set secure
-                      
+
 " Split navigation witouh CTRL+W
 map <C-j> <C-W>j
 map <C-k> <C-W>k
