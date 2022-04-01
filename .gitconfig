@@ -4,6 +4,7 @@
     excludesfile = ~/.gitignore
     editor = vim
     pager = less -x1,5
+	hooksPath = ~/.git/hooks
 [creo]
     autocrlf = true
 [color]
