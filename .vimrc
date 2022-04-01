@@ -94,8 +94,8 @@ set cc=+1
 highlight ColorColumn ctermbg=150
 
 " highlight whitespace damage
-highlight RedundantSpaces ctermbg=red guibg=red
-match RedundantSpaces /\s\+$\| \+\ze\t/
+autocmd ColorScheme * highlight RedundantSpaces ctermbg=red guibg=red
+autocmd ColorScheme * match RedundantSpaces /\s\+$\| \+\ze\t/
 
 " Set up color scheme and syntax highlighting
 set t_Co=256
