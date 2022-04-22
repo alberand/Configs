@@ -72,7 +72,9 @@ vnoremap <Space> za
 
 " Undo history
 set undofile
-set undodir=~/.vim/undodir
+set undodir=~/.vim/undo//
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swp//
 "==============================================================================
 " Coloring
 "==============================================================================
