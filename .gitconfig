@@ -4,7 +4,7 @@
     excludesfile = ~/.gitignore
     editor = vim
     pager = less -x8
-	hooksPath = ~/.git/hooks
+    hooksPath = ~/.git/hooks
 [creo]
     autocrlf = true
 [color]
@@ -25,4 +25,4 @@
     process = git-lfs filter-process
     required = true
 [grep]
-	lineNumber = true
+    lineNumber = true
