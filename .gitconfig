@@ -3,7 +3,7 @@
 [core]
     excludesfile = ~/.gitignore
     editor = vim
-    pager = less -x1,5
+    pager = less -x8
 	hooksPath = ~/.git/hooks
 [creo]
     autocrlf = true
