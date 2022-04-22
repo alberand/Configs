@@ -17,6 +17,7 @@
     fp = format-patch -o patches --cover-from-description=subject
     lg = log --oneline -n10
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    sm = send-email
     am = am --empty=keep --allow-empty # to skip cover letter emails
 [filter "lfs"]
     clean = git-lfs clean -- %f
