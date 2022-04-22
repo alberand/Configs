@@ -7,11 +7,6 @@
 " @date: 06.01.18
 " @author: Andrey Albershteyn
 "
-" Load local machine's settings
-if filereadable(glob("~/.vimrc.local"))
-    source ~/.vimrc.local
-endif
-
 " Set line number
 set number
 
@@ -129,3 +124,8 @@ autocmd BufRead,BufNewFile *.md,*.txt,*.tex setlocal spell
 
 " Auto correct last word in insert mode by CTRL+e
 imap <C-e> <Esc>[s1z=`]a
+
+" Load local machine's settings
+if filereadable(glob("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
