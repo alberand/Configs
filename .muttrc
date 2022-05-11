@@ -44,6 +44,12 @@ set editor="vim -c 'set ft=mail tw=68'"
 # Read all in mailbox
 macro index \CA "T ~O | ~N\n;N\n"
 
+# Show Message-ID in the header by default
+ignore *
+unignore From: Date: To: Cc: Subject: Reply-To: List-ID: Message-ID: In-Reply-To:
+hdr_order From: Date: To: Cc: Subject: Reply-To: List-ID: Message-ID: In-Reply-To:
+
+
 # Patch syntax highlighting
 #color  normal  white           default
 color   body    brightwhite     default         ^[[:space:]].*
