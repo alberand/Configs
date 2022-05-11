@@ -32,7 +32,8 @@ set certificate_file = "~/.mutt/certificates"
 set postponed = "+Drafts"
 # Gmail automatically saves sent e-mail to +[Gmail]/Sent
 unset record
-mailboxes =INBOX =Memos =fstests =xfs =outage
+mailboxes -label inbox =INBOX
+mailboxes =Memos =fstests =xfs =outage =Sent
 
 # Etc
 set mail_check = 30
