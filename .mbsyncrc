@@ -21,8 +21,8 @@ Path ~/.mail/gmail/
 Inbox ~/.mail/gmail/Inbox
 
 Channel gmail
-Far :gmail-remote:
-Near :gmail-local:
+Far :gmail-remote:"[Gmail]/All Mail"
+Near :gmail-local:inbox
 # Exclude everything under the internal [Gmail] folder, except the interesting
 # folders
 Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
