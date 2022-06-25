@@ -26,3 +26,5 @@
     required = true
 [grep]
     lineNumber = true
+[pull]
+	rebase = true
