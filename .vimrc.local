@@ -16,13 +16,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'                  " Plugin Installation
 Plugin 'kien/ctrlp.vim'                     " CTRL+P
 Plugin 'bling/vim-airline'                  " AirLine
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'craigemery/vim-autotag'             " For ctags integration
 " Plugin 'Valloric/YouCompleteMe'             " For Autocomplete
 Plugin 'tpope/vim-surround'                 " For <p> \" ' [] {} ()
 " Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-characterize'             " Character info with ga
 " After add new plugin restart vim and run PluginInstall command
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -65,7 +65,7 @@ nmap <leader>bs :CtrlPMRU<cr>
 "==============================================================================
 " Python IDE
 "==============================================================================
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead *.html, *.css
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
