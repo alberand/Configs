@@ -1,3 +1,5 @@
+# To get rid of .zcompdump
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -82,3 +84,9 @@ export ARCHFLAGS="-arch x86_64"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source $HOME/.shrc.local
+if [ -e /home/alberand/.nix-profile/etc/profile.d/nix.sh ]; then . /home/alberand/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Run graphical user interface
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    exec startx
+fi
