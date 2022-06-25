@@ -273,24 +273,25 @@ bindsym $mod+Ctrl+L exec --no-startup-id /usr/local/bin/lock
 bindsym XF86AudioMicMute exec --no-startup-id amixer -c 1 set Capture toggle
 
 # Status bar
-bar {
-    position top
+# bar {
+    #position top
     # status_command i3status | ~/.config/i3status/wraper.py
     # status_command ~/.scripts/system/conky-i3bar
     # status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf | i3bar -t
-    status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
-    i3bar_command i3bar -t
+    # status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
+    # i3bar_command i3bar -t
+    # i3bar_command $(.local/bin/polybar-launch.sh)
     # i3bar_command $(~/.scripts/lemonbar/lemonbar.sh)
     # i3bar_command $(~/Projects/lemonbar/run.sh)
-    font pango: Hack, FontAwesome 8
+    #font pango: Hack, FontAwesome 8
     # strip_workspace_numbers yes
     # tray_output eDP-1
     # tray_output VGA-1
-    tray_padding 0
-    colors {
-        statusline         $white
-        background         $transparent
-        separator          $transparent
+    #tray_padding 0
+    #colors {
+        #statusline         $white
+        #background         $transparent
+        #separator          $transparent
 
 #                          BORDER       BACKGROUND   TEXT
         # focused_workspace  $transparent $transparent $darkwhite
@@ -298,8 +299,8 @@ bar {
         # active_workspace   $transparent $transparent $white
         # urgent_workspace   $darkred     $darkred     $transparent
         # binding_mode       $darkred     $darkred     $transparent
-    }
-}
+    #}
+# }
 
 # Windows colors
 # Class                 # border    # bakcg.    # text  # indic # child
@@ -312,6 +313,7 @@ client.urgent           $d_blue     $d_blue     #ee0000 $red    $d_blue
 #==============================================================================
 # Fix graphics glitch
 #==============================================================================
+# To find out window's class use 'xprop'
 new_window none
 
 for_window [window_role="arandr"] floating enable
@@ -340,21 +342,27 @@ for_window [class="Shutter"] floating enable
 # for_window [class="MATLAB"] floating enable
 for_window [class="Anki"] floating enable
 
+for_window [class="firefox" instance="Toolkit"] floating enable, border pixel 0
+for_window [class="Org.gnome.Nautilus"] border pixel 0
 
 #==============================================================================
 # Autostart
 #==============================================================================
+# Status bar
+exec_always --no-startup-id $HOME/.local/bin/polybar-launch.sh
+
 exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/thunderbird'
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/terminator'
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
+exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/telegram-desktop'
 exec --no-startup-id dropbox
 # Network manager GUI
 exec --no-startup-id cmst
 # Script which change borders for different modes
 exec --no-startup-id ~/.local/bin/i3-floating-titlebar
+# Screenshot application
+exec --no-startup-id flameshot
 
-# Notification center
-exec_always --no-startup-id dunst -config ~/.config/dunst/config
 
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
