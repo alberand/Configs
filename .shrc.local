@@ -1,13 +1,14 @@
 #!/usr/bin/env sh
 
 # Shell configuration
-# 
+#
 # @author: Andrey Albershteyn
 # @date: 2018
 
 #==============================================================================
 # Configuration
 #==============================================================================
+
 # Locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -18,8 +19,8 @@ alias tmux="TERM=screen-256color tmux"
 export TERM=screen-256color
 
 # Editor for pacman
-export VISUAL="vim"
-export EDITOR="vim"
+export VISUAL="nvim"
+export EDITOR="nvim"
 
 # Minicom colors
 export MINICOM="-m -c on"
@@ -28,7 +29,7 @@ export MINICOM="-m -c on"
 export PATH=$PATH:$HOME/.local/bin
 
 # Editor for cscope (by default it's vi)
-export CSCOPE_EDITOR=vim 
+export CSCOPE_EDITOR=vim
 
 with_passwords(){
     pwds=`gpg --decrypt ~/.passwords.gpg`
@@ -45,35 +46,17 @@ alias cal="cal -ym"
 alias mc='. /usr/lib/mc/mc-wrapper.sh'
 alias ipy='ipython3'
 
-# Scripts
-alias hot='sudo $HOME/.scripts/hotspot.sh'
-alias eduroam='sudo silence $HOME/.scripts/eduroam.sh'
-
-# For fun
-alias rickroll="curl -L http://bit.ly/10hA8iC | bash"
-alias weather="$HOME/.scripts/weather.sh"
-
+# Blog
 BLOG_ROOT=$HOME/Projects/blog
+alias blog='cd $BLOG_ROOT; cat README.rst'
 
 # Allows to passthrough user's aliases to sudo
 alias sudo='sudo '
-
-# Frequent directories
-alias sem='cd $HOME/Documents/Study/6-858'
-alias eng='cd $HOME/Documents/English/'
-alias deu='cd $HOME/Documents/Deutsch/'
-
-alias blog='cd $BLOG_ROOT; cat README.rst'
 
 # Pythons
 alias py2='python2'
 alias py3='python3'
 alias py='python'
-
-# Applications
-alias p='pacman'
-alias y='yaourt'
-alias v='vim'
 
 # Connect to ssh-agent run by systemd
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
@@ -89,7 +72,7 @@ alias pdf=pdfreader
 
 # Image viewver
 function show_image(){
-	gwenview "$1" >/dev/null 2>&1 &
+	feh "$1" >/dev/null 2>&1 &
 }
 alias img=show_image
 
@@ -97,7 +80,7 @@ alias img=show_image
 function quiet_runner(){
 	"$1" "$2" >/dev/null 2>&1 &
 }
-alias silence=quiet_runner
+alias mute=quiet_runner
 
 # For latex. This script convert .png and .jpg images to eps
 function convert_to_eps(){
@@ -169,20 +152,9 @@ man() {
 			man "$@"
 }
 
-#==============================================================================
-# Useful commands
-#==============================================================================
-# du -sh: size of the current directory
-
-#==============================================================================
 # Platformio set up
-#==============================================================================
 export PLATFORMIO_FORCE_COLOR=true
 
-# export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true \
-#   -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-#==============================================================================
 # Zephyr RTOS setup
-#==============================================================================
 export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
 export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk

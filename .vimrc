@@ -107,11 +107,11 @@ endif
 set synmaxcol=128
 
 " Speed up terminal
-set ttyfast 
+set ttyfast
 if !has('nvim')
     set ttyscroll=3
 endif
-set lazyredraw 
+set lazyredraw
 
 "==============================================================================
 " Spell Check
@@ -129,4 +129,10 @@ imap <C-e> <Esc>[s1z=`]a
 " Load local machine's settings
 if filereadable(glob("~/.vimrc.local"))
     source ~/.vimrc.local
+endif
+
+" Move .viminfo to ~/.vim
+set viminfo+=n~/.vim/viminfo
+if has('nvim')
+	let &viminfo .= '.nvim'
 endif
