@@ -5,7 +5,6 @@
     editor = vim
     # Make tabs 8 chars wide
     pager = less -x8
-    hooksPath = ~/.git/hooks
 [creo]
     autocrlf = true
 [color]
@@ -27,6 +26,8 @@
     am = am --empty=keep --allow-empty
     # Combine b4 and am into one git b4 command
     b4 = "!f() { b4 am -t -o - $1 | git am; }; f"
+    # Shortcut for backporting in RH (/tmp file is used by hook)
+    bp = "!echo $1 > /tmp/.git-backport-$(git rev-parse --abbrev-ref HEAD) && git cherry-pick -x $1"
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
