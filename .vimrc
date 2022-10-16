@@ -75,6 +75,9 @@ set undofile
 set undodir=~/.vim/undo//
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swp//
+
+" Highlight current line
+set cursorline
 "==============================================================================
 " Coloring
 "==============================================================================

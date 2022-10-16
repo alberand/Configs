@@ -1,37 +1,25 @@
-" Set color scheme
-colorscheme badwolf
-
-"==============================================================================
 " Plugins manager
-"==============================================================================
+"
 " Filetype plugin indent on
 set nocompatible              " required
 filetype off                  " required
 
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-" Let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'                  " Plugin Installation
-Plugin 'kien/ctrlp.vim'                     " CTRL+P
-Plugin 'bling/vim-airline'                  " AirLine
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'craigemery/vim-autotag'             " For ctags integration
-" Plugin 'Valloric/YouCompleteMe'             " For Autocomplete
-Plugin 'tpope/vim-surround'                 " For <p> \" ' [] {} ()
-" Plugin 'tmhedberg/SimpylFold'
-Plugin 'tpope/vim-characterize'             " Character info with ga
-" After add new plugin restart vim and run PluginInstall command
+Plug 'sjl/badwolf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-context'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
+" Set color scheme
+colorscheme badwolf
 
-"==============================================================================
 " Latex
-"==============================================================================
 let g:LatexBox_latexmk_options = "-pvc -pdf  -auxdir=/tmp"
 let g:TCLevel = 4
 let g:Tex_CompileRule_pdf = 'latexmk -pdf'
@@ -40,58 +28,10 @@ let g:LatexBox_latexmk_async=1
 let g:Tex_ShowErrorContext = 0
 let g:Tex_GotoError = 0
 
-"==============================================================================
-" CtrlP
-"==============================================================================
-" Setup some default ignores
-let g:ctrlp_custom_ignore = {
-\ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
-\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|aux|acn|acr|alg|dvi|fls|glg|glo|gls|ist|lof|log|out|toc)$',
-\}
-
-" Working directori ('rca')
-" let g:ctrlp_working_path_mode = 'c'
-let g:ctrlp_working_path_mode = 0
-
-" Use a leader instead of the actual named binding
-nmap <leader>p :CtrlP<cr>
-"let g:ctrlp_cmd = 'CtrlPMRU'
-
-" Easy bindings for its various modes
-nmap <leader>bb :CtrlPBuffer<cr>
-nmap <leader>bm :CtrlPMixed<cr>
-nmap <leader>bs :CtrlPMRU<cr>
-
-"==============================================================================
-" Python IDE
-"==============================================================================
-au BufNewFile,BufRead *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-
-" Ctrl+b run python code
-autocmd FileType python nnoremap <buffer> <C-b> :exec '!python' shellescape(@%, 1)<cr>
-
-" If this types use 2 spaces
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype css setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype tex setlocal ts=2 sts=2 sw=2
-autocmd Filetype json setlocal ts=2 sts=2 sw=2
-
-"==============================================================================
 " Powerline
-"==============================================================================
-set laststatus=2
-let g:Powerline_symbols = 'fancy'
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline_theme = 'powerlineish'
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-
-" Pylint check
-autocmd FileType python set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %:p
-autocmd FileType python set errorformat=%f:%l:\ %m

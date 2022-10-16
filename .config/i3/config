@@ -251,12 +251,6 @@ mode "$mode_gaps_outer" {
 }
 
 #==============================================================================
-# Helping
-#==============================================================================
-
-# Script for changing keyboard layout
-bindsym $mod+x exec --no-startup-id ~/.scripts/system/keylyt
-
 # Backlght controls
 bindsym XF86MonBrightnessUp     exec --no-startup-id light -A 5
 bindsym XF86MonBrightnessDown   exec --no-startup-id light -U 5
@@ -316,34 +310,28 @@ client.urgent           $d_blue     $d_blue     #ee0000 $red    $d_blue
 # To find out window's class use 'xprop'
 new_window none
 
-for_window [window_role="arandr"] floating enable
+# Move all floating windows to the center
+for_window [class="*"] move position center
+
+# Make application floating by default
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
-
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
-
-for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down $height px
 for_window [class="(?i)qemu-system"] floating enable
 for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
 for_window [class="(?i)VirtualBox"] floating enable
 for_window [class="(?i)blueman"] floating enable
-
+for_window [class="(f|F)ont-manager"] floating enable
 for_window [instance="__scratchpad"] floating enable
 for_window [instance="__nmtui"] floating enable
 for_window [class="(?i)recordmydesktop"] floating enable
-
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down $height px
-
-for_window [class="Shutter"] floating enable
-# for_window [class="MATLAB"] floating enable
 for_window [class="Anki"] floating enable
-
 for_window [class="firefox" instance="Toolkit"] floating enable, border pixel 0
-for_window [class="Org.gnome.Nautilus"] border pixel 0
 
 #==============================================================================
 # Autostart
@@ -363,11 +351,7 @@ exec --no-startup-id ~/.local/bin/i3-floating-titlebar
 # Screenshot application
 exec --no-startup-id flameshot
 
-
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
-
-# Update multimonitor setup
-bindsym $mod+c exec --no-startup-id ~/.scripts/mmonitor.sh

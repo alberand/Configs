@@ -18,6 +18,8 @@ export LANGUAGE=en_US.UTF-8
 alias tmux="TERM=screen-256color tmux"
 export TERM=screen-256color
 
+alias vim="nvim"
+
 # Editor for pacman
 export VISUAL="nvim"
 export EDITOR="nvim"
@@ -29,7 +31,7 @@ export MINICOM="-m -c on"
 export PATH=$PATH:$HOME/.local/bin
 
 # Editor for cscope (by default it's vi)
-export CSCOPE_EDITOR=vim
+export CSCOPE_EDITOR=nvim
 
 with_passwords(){
     pwds=`gpg  --no-tty -qd ~/.passwords.template.gpg`
