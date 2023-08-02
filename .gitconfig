@@ -2,9 +2,9 @@
     path =  ~/.gitconfig.local
 [core]
     excludesfile = ~/.gitignore
-    editor = vim
+    editor = nvim
     # Make tabs 8 chars wide
-    pager = less -x8
+    pager = less -x8 -FX
 [creo]
     autocrlf = true
 [color]
