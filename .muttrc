@@ -3,12 +3,15 @@
 source ~/.muttrc.local
 set signature="~/.mutt/signature"
 
-set editor = "/usr/bin/vim -c 'set spell spelllang=en'"
+set editor = "/usr/bin/nvim -c 'set spell spelllang=en'"
 set mark_old = no
 
 # My credentials
 set smtp_pass = $MUTT_PASS
 set imap_pass = $MUTT_PASS
+
+set index_format = "%4C %Z [%{%d %b}] %-15.15L %s"
+set date_format="%F %T"
 
 # Sidebar
 set sidebar_visible
@@ -22,6 +25,12 @@ bind index,pager "\Cp" "sidebar-prev"
 bind index,pager "\Cn" "sidebar-next"
 bind index,pager "\Co" "sidebar-open"
 
+# View HTML emails and mailcap configuration
+set mailcap_path=~/.mailcap
+auto_view text/html                      # Automatically parse html messages through w3m
+auto_view text/x-vcard                   # vcard attachments viewed through mutt.vcard.filter
+set implicit_autoview=yes # Load in pager if setting in .mailcap says 'copiousoutput'.
+
 # My mailboxes
 set virtual_spoolfile=yes
 # set folder = "imaps://imap.gmail.com:993"
@@ -31,15 +40,21 @@ set folder = "~/.mail/gmail/inbox"
 # set spoolfile = "+INBOX"
 
 virtual-mailboxes "inbox" "notmuch://?query=tag:inbox"
+virtual-mailboxes "bookmarks" "notmuch://?query=tag:bookmark"
 virtual-mailboxes "sent" "notmuch://?query=tag:sent"
 virtual-mailboxes "newsletters" "notmuch://?query=tag:newsletters"
 virtual-mailboxes "fstests" "notmuch://?query=tag:fstests"
 virtual-mailboxes "xfs" "notmuch://?query=tag:linux-xfs"
+virtual-mailboxes "fsdevel" "notmuch://?query=tag:linux-fsdevel"
+virtual-mailboxes "kernel-info" "notmuch://?query=tag:kernel-info"
 virtual-mailboxes "bugzilla" "notmuch://?query=tag:bugzilla"
 virtual-mailboxes "gitlab" "notmuch://?query=tag:gitlab"
 virtual-mailboxes "memos" "notmuch://?query=tag:memos"
 virtual-mailboxes "brew" "notmuch://?query=tag:brew"
 virtual-mailboxes "beaker" "notmuch://?query=tag:beaker"
+virtual-mailboxes "index" "notmuch://?query=*"
+
+macro index,pager b "<tag-thread><tag-prefix><modify-labels>!bookmark\n<previous-entry><tag-thread>" "Toggle the 'bookmark' tag"
 
 # Where to put the stuff
 set header_cache = "~/.mutt/cache/headers"
@@ -64,18 +79,25 @@ macro index \CA "T ~O | ~N\n;N\n"
 # Limit view to current thread
 bind index \Cl limit-current-thread
 
+bind index - collapse-thread
+bind index _ collapse-all
+
 # Show Message-ID in the header by default
 ignore *
-unignore From: Date: To: Cc: Subject: Reply-To: Message-ID: In-Reply-To:
-hdr_order From: Date: To: Cc: Subject: Reply-To: Message-ID: In-Reply-To:
+unignore Subject: From: Date: To: Cc: Reply-To: Message-ID: In-Reply-To:
+hdr_order Subject: From: Date: To: Cc: Reply-To: Message-ID: In-Reply-To:
 
 source ~/.mutt/dracula.muttrc
-
-color index cyan default "~s [[ANNOUNCE]]"
 
 color header cyan black .
 color header yellow black ^From
 color header yellow black ^Subject
+color header yellow black ^Date
+color header color102 black ^To
+color header color102 black ^CC
+color header color102 black ^Message-ID
+color header color102 black ^Reply-To
+color header color102 black ^In-Reply-To
 color body yellow black [_a-z\.\$A-Z0-9-]+@[a-zA-Z0-9\./\-]+
 color body yellow black (http|ftp)://[_a-zA-Z0-9\?\=\&\@\%\#\:\,\./~\-]+
 color quoted green black
@@ -88,8 +110,8 @@ color   body    brightwhite     default         ^[[:space:]].*
 color   body    yellow          default         ^(diff).*
 #color   body    white           default         ^[\-\-\-].*
 #color   body    white           default         ^[\+\+\+].*
-#color   body    green           default         ^[\+].*
-#color   body    red             default         ^[\-].*
+color   body    green           default         ^[\+].*
+color   body    red             default         ^[\-].*
 #color   body    brightblue      default         [@@].*
 color   body    brightwhite     default         ^(\s).*
 color   body    cyan            default         ^(Signed-off-by).*
