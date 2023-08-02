@@ -167,3 +167,6 @@ mm() {
 }
 
 alias bkr-reset="bkr system-power --action=reboot"
+
+# gitlab token (don't share outside work)
+export GITLAB_RO_TOKEN="xxxx"
