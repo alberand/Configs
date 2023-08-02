@@ -21,6 +21,7 @@ export TERM=screen-256color
 alias vim="nvim"
 
 # Editor for pacman
+alias vim="nvim"
 export VISUAL="nvim"
 export EDITOR="nvim"
 
@@ -46,7 +47,6 @@ alias mbsync="with_passwords mbsync"
 # Applications
 alias viml="/usr/bin/vim --servername vimlatex"
 alias cal="cal -ym"
-alias mc='. /usr/lib/mc/mc-wrapper.sh'
 alias ipy='ipython3'
 
 # Blog
@@ -155,9 +155,6 @@ function man() {
 			man "$@"
 }
 
-# Platformio set up
-export PLATFORMIO_FORCE_COLOR=true
-
 # Linux Dev
 KERNEL=$HOME/Projects/kernel/linux
 alias kernel="cd $KERNEL"
@@ -169,4 +166,4 @@ mm() {
 	parse-lore.py $@
 }
 
-alias bkr-reboot="bkr system-power --action=reboot"
+alias bkr-reset="bkr system-power --action=reboot"
